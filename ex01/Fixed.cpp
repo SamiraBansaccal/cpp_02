@@ -6,7 +6,7 @@
 /*   By: sbansacc <sbansacc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 23:08:49 by sbansacc          #+#    #+#             */
-/*   Updated: 2025/11/11 22:09:25 by sbansacc         ###   ########.fr       */
+/*   Updated: 2025/11/25 17:08:08 by sbansacc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat( void ) const {
-	return (_rawBits / (1 << _fractionalBits));
+	return ((static_cast<float>(_rawBits)) / (1 << _fractionalBits));
 }
 
 int Fixed::toInt( void ) const {

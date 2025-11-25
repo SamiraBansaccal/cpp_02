@@ -6,7 +6,7 @@
 /*   By: sbansacc <sbansacc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 01:17:16 by sbansacc          #+#    #+#             */
-/*   Updated: 2025/11/20 01:03:07 by sbansacc         ###   ########.fr       */
+/*   Updated: 2025/11/25 17:44:43 by sbansacc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ Fixed vectProduct(Point const &point, Point const &a, Point const &b) {
 
 bool bsp(Point const a, Point const b, Point const c, Point const point) {
 	Fixed a1  = vectProduct(point, a, b);
-	Fixed a2  = vectProduct(point, a, c);
-	Fixed a3  = vectProduct(point, c, b);
-	if (a1 == 0 || a2 == 0 || a3 == 0 || (!(a1 < 0 && a2 < 0 && a3 < 0) && !(a1 > 0 && a2 > 0 && a3 > 0)))
+	Fixed a2  = vectProduct(point, b, c);
+	Fixed a3  = vectProduct(point, c, a);
+	if (a1 == 0 || a2 == 0 || a3 == 0)
 		return (false);
-	return (true);
+	if ((a1 < 0 && a2 < 0 && a3 < 0) || (a1 > 0 && a2 > 0 && a3 > 0))
+		return (true);
+	return (false);
 }

@@ -6,7 +6,7 @@
 /*   By: sbansacc <sbansacc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 01:17:35 by sbansacc          #+#    #+#             */
-/*   Updated: 2025/11/20 01:02:10 by sbansacc         ###   ########.fr       */
+/*   Updated: 2025/11/25 17:35:05 by sbansacc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Point {
 		Point(Point &copy);
 		~Point();
 		Point&	operator=(Point const &);
-		Fixed	getX() const;
-		Fixed	getY() const;
+		Fixed const &	getX() const;
+		Fixed const &	getY() const;
 	private:
 		Fixed const	_x;
 		Fixed const	_y;
